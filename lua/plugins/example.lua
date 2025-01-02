@@ -6,7 +6,7 @@
 -- In your plugin files, you can:
 -- * add extra plugins
 -- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins2
+-- * override the configuration of LazyVim plugins
 return {
 
   {
@@ -16,28 +16,21 @@ return {
     end,
   },
 
-  -- add catppuccin
-  { "Mofiqul/dracula.nvim",
-    name = "dracula",
-    config = function()
-      require("dracula").setup({
-        custom_highlights = function(colors)
-          return {
-            CursorLine = { bg = colors.surface1 }, -- Ajusta o fundo da linha do cursor
-            CursorLineNr = { fg = colors.text, style = { "bold" } }, -- Realça o número da linha
-          }
-        end,
-      })
-    end, },
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "dracula",
-    },
-  },
+-- Or with configuration
+{
+  'projekt0n/github-nvim-theme',
+  name = 'github-theme',
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  priority = 1000, -- make sure to load this before all the other start plugins
+  config = function()
+    require('github-theme').setup({
+      -- ...
+    })
 
+    vim.cmd('colorscheme github_light')
+  end,
+},
   -- change trouble config
   {
     "folke/trouble.nvim",
