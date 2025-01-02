@@ -28,3 +28,6 @@ require("nvim-treesitter.configs").setup({
     additional_vim_regex_highlighting = false,
   },
 })
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000", fg = "#abb2bf" }) -- Exemplo de cores
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e222a", fg = "#61afef" }) -- Ajusta a borda flutuante

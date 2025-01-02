@@ -20,3 +20,7 @@ vim.keymap.set("v", "<C-x>", '"+d', { desc = "Cortar para a área de transferên
 
 --Find references using LSP and Telescope
 vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>:Telescope lsp_references<CR>", { noremap = true, silent = true })
+
+-- Configura o mapeamento de hover para a tecla K
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+
