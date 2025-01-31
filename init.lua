@@ -15,8 +15,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   pattern = "*",
   callback = function()
-    if vim.bo.modified then
-      vim.cmd("write") -- Salva o arquivo automaticamente
+    -- Só salva se NÃO for um buffer especial (como janelas flutuantes e terminais)
+    if vim.bo.modified and vim.bo.buftype == "" then
+      vim.cmd("write")
     end
   end,
 })
@@ -31,3 +32,5 @@ require("nvim-treesitter.configs").setup({
 
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000", fg = "#abb2bf" }) -- Exemplo de cores
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e222a", fg = "#61afef" }) -- Ajusta a borda flutuante
+
+vim.keymap.set("n", "<leader>ad", vim.lsp.buf.definition, { noremap = true, silent = true })
