@@ -38,6 +38,6 @@
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
   "ts-comments.nvim": { "branch": "main", "commit": "872dcfa0418f4a33b7437fb4d9f4e89f2f000d74" },
   "typescript.nvim": { "branch": "main", "commit": "4de85ef699d7e6010528dcfbddc2ed4c2c421467" },
-  "vim-grammarous": { "branch": "master", "commit": "db46357465ce587d5325e816235b5e92415f8c05" },
+  "vim-oscyank": { "branch": "main", "commit": "4b068e5b553f907c5f6d00b0ab9e1e3b98cf71bf" },
   "which-key.nvim": { "branch": "main", "commit": "8ab96b38a2530eacba5be717f52e04601eb59326" }
 }
