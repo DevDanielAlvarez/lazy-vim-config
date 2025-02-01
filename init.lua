@@ -34,3 +34,13 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000", fg = "#abb2bf" }) -- Exe
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#1e222a", fg = "#61afef" }) -- Ajusta a borda flutuante
 
 vim.keymap.set("n", "<leader>ad", vim.lsp.buf.definition, { noremap = true, silent = true })
+
+require("neo-tree").setup({
+  filesystem = {
+    filtered_items = {
+      visible = true, -- Mostra arquivos ocultos
+      hide_dotfiles = false, -- Exibe arquivos que começam com "."
+      hide_gitignored = false, -- Exibe arquivos ignorados pelo Git
+    },
+  },
+})
