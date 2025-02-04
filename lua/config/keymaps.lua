@@ -23,4 +23,9 @@ vim.api.nvim_set_keymap("n", "<leader>r", "<cmd>:Telescope lsp_references<CR>", 
 
 -- Configura o mapeamento de hover para a tecla K
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-
+--go to definition
+vim.keymap.set("n", "<leader>ad", vim.lsp.buf.definition, { noremap = true, silent = true })
+-- Excluir linha sem copiar para o buffer com 'qq' no modo visual
+vim.keymap.set("n", "qq", '"_dd', { desc = "Excluir linha sem copiar para o buffer" })
+-- Definir a cor da borda da linha (simulando a borda laranja ao redor da linha)
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFA500" }) -- Número da linha laranja

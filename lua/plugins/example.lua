@@ -8,7 +8,9 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-
+  {
+    "onsails/lspkind.nvim"
+  },
   {
     "numToStr/Comment.nvim",
     config = function()
